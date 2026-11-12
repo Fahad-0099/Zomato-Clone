@@ -14,6 +14,7 @@ RUN npm ci --only=production
 COPY . .
 
 # Build the React app
+ENV NODE_OPTIONS=--openssl-legacy-provider DISABLE_ESLINT_PLUGIN=true
 RUN npm run build
 
 # ---- Production Stage ----

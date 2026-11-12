@@ -1,5 +1,5 @@
 # Use an official Node.js image as the base (LTS version for stability)
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -18,7 +18,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider DISABLE_ESLINT_PLUGIN=true
 RUN npm run build
 
 # ---- Production Stage ----
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set the working directory
 WORKDIR /app
